@@ -1,0 +1,80 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f8f9fa;
+}
+.login-container .logo{
+  
+}
+.login-container {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  display: flex;
+  max-width: 1000px;
+  width: 100%;
+  direction: rtl;
+}
+.register .btn btn-outline-primary{
+  background-color: #6f42c1;
+  border-color: #6f42c1;
+  color: white;
+}
+.video-container {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-container video {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.form-container {
+  flex: 1;
+  padding: 20px;
+  text-align: right;
+}
+
+.form-container .text-right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* .form-container .logo {
+  max-height: 300px;
+} */
+
+.form-container .subscribe-btn {
+  background-color: #6f42c1;
+  border-color: #6f42c1;
+}
+
+.form-container h2 {
+  margin-bottom: 20px;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container form .form-group {
+  margin-bottom: 15px;
+}
+
+.form-container .btn-primary {
+  background-color: #6f42c1;
+  border-color: #6f42c1;
+}
+
+.form-container a {
+  color: #6f42c1;
+}
