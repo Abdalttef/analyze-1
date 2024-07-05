@@ -81,10 +81,15 @@ body {
   margin-bottom: 20px;
   float: right;
 }
+.form-container p {
+  margin-bottom: 20px;
+  float:right;
+}
 
 .form-container form {
   display: flex;
   flex-direction: column;
+  float: right;
 }
 
 .form-container form .form-group {
