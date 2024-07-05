@@ -78,6 +78,7 @@ body {
 
 .form-container h2 {
   margin-bottom: 20px;
+  float: right;
 }
 
 .form-container form {
