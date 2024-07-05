@@ -2,7 +2,7 @@
 
 /* start: Globals */ 
 body{
-    font-family: "lato",sans-serif;
+    font-family : "lato",sans-serif;
 }
 .pricing-table{
     background: #f8f8f8;
@@ -15,11 +15,21 @@ text-align:right;
 margin: 0 auto;
 padding: 40px 20px;
 
+
 }
-.pricing-table .details h2 {
+/* .details h2{
+
+} */
+/* .pricing-table .details h2 {
 font-size:  30px; ;
 margin-bottom: 10px;
+} */
+.details h2{
+margin-right: 3px;
+padding-right: 2px;
+float: right;
 }
+
 .pricing-table .grid{
     display: flex;
     flex-wrap: wrap;
@@ -103,11 +113,19 @@ cursor:pointer;
     min-width: 0;
 }
 .payment-form {
-    transform: scale(0.8); /* Make the form smaller */
+    transform: scale(0.8); 
     position: absolute; 
-    top: 120px; /* Move the form down */
-    left: 130px; /* Move the form to the right */
+    top: 120px; 
+    left: 130px; 
 }
+ /* .payment-form {
+display:block;
+position:inherit;
+flex-direction: column;
+top: 130px;
+left: 130px;
+
+ } */
 .payment-title {
     font-size: 22px;
     font-weight: 700;

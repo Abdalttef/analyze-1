@@ -1,0 +1,89 @@
+body {
+  background-color: #f8f9fa;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  width: 100%;
+}
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 0;
+  height: 55px;
+  border-radius: 3px;
+}
+.header .logo {
+  order: 1;
+  max-height: 45px;
+}
+.form-container {
+  background: #fff;
+  padding: 60px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: right;
+}
+
+.img-fluid {
+  height: auto;
+  max-width: 100%;
+}
+.enlarged-img {
+  width: 100%; 
+  max-width: 1000px;
+}
+.form-container h2 {
+  margin-bottom: 20px;
+}
+.form-container p {
+  margin-bottom: 20px;
+}
+
+.form-control {
+  border-radius: 10px;
+  text-align: right;
+}
+
+.btn-primary {
+  background-color: #8d6d91;
+  border-color: #6f42c1;
+  border-radius: 10px;
+}
+
+.btn-primary:hover {
+  background-color: #705572;
+  border-color: #5a379c;
+}
+
+a {
+  color: #6f42c1;
+}
+
+a:hover {
+  color: #5a379c;
+}
+
+@media (max-width: 768px) {
+  .img-fluid {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .form-container {
+    width: 80%;
+  }
+}
