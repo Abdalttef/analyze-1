@@ -44,6 +44,10 @@ body {
   padding-left: 25px;
   padding-right: 25px;
 }
+.btn-outline-primary:hover{
+  background-color: #705572;;
+}
+
 
 .login-container {
   background: rgb(255, 255, 255);
@@ -90,6 +94,7 @@ body {
   display: flex;
   flex-direction: column;
   float: right;
+  width: 100%;
 }
 
 .form-container form .form-group {

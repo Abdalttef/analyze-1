@@ -35,6 +35,11 @@ body {
   width: 100%;
   margin: 0 auto;
   text-align: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 65px;
+
 }
 
 .img-fluid {
@@ -42,8 +47,9 @@ body {
   max-width: 100%;
 }
 .enlarged-img {
-  width: 100%; 
-  max-width: 1000px;
+  /* width: 100%;  */
+  max-width: 500px;
+  height: 400px;
 }
 .form-container h2 {
   margin-bottom: 20px;
@@ -69,7 +75,7 @@ body {
 }
 
 a {
-  color: #6f42c1;
+  color: #8d6d91;
 }
 
 a:hover {

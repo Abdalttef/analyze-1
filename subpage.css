@@ -1,9 +1,29 @@
-.logoo .logo{
+
+body {
+    background-color: #f8f9fa;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  .header {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 0;
+    height: 55px;
+    border-radius: 3px;
+}
+
+.header .logo {
+    order: 1;
     max-height: 45px;
-    margin-right: 15px;
-    float: right;
-    margin-top: 15px;
-  }
+}
 
 .payment-right {
     min-width: 0;
@@ -130,7 +150,7 @@ input:checked + .payment-method-item::before {
 }
 
 .payment-form-submit-button {
-    background-color: #7e6182;
+    background-color: #8d6d91;
     border-radius: 8px;
     outline: transparent;
     display: flex;
@@ -146,7 +166,7 @@ input:checked + .payment-method-item::before {
 }
 
 .payment-form-submit-button:hover {
-    background-color: #b49bb7;
+    background-color: #705572;
 }
 
 .payment-form-submit-button > i {
