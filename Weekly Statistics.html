@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Attendance</title>
+    <link rel="stylesheet" href="Weekly Statistics.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header" id="header">
+            <div class="select-group">
+                <label for="semester">الفصل الدراسي</label>
+                <select id="semester">
+                    <option>الفصل الدراسي الأول</option>
+                    <option>الفصل الدراسي الثاني</option>
+                </select>
+            </div>
+            <div class="select-group">
+                <label for="week">الأسبوع</label>
+                <select id="week">
+                    <option>الأسبوع 1</option>
+                    <option>الأسبوع 2</option>
+                </select>
+            </div>
+        </div>
+        <div class="controls">
+            <div class="buttons">
+                <button id="fetchDataButton">جلب البيانات</button>
+                <input type="file" id="fileInput" style="display:none">
+            </div>
+            <div class="tabs">
+                <button id="graphButton">الرسم البياني</button>
+                <button id="statsButton">الإحصائية</button>
+            </div>
+        </div>
+        <div class="content">
+            <div class="table-container" id="table-container">
+                <!-- Table content goes here -->
+            </div>
+            <div class="chart-container hidden" id="chart-container">
+                <canvas id="attendanceChart"></canvas>
+            </div>
+            <div class="stats-container hidden" id="stats-container">
+                <p>إحصائيات الحضور والغياب:</p>
+                <p>الصف الثاني: نسبة الحضور 88.00%</p>
+            </div>
+        </div>
+        <div class="download-buttons">
+            <button id="downloadChart">تنزيل الرسم البياني PDF</button>
+            <button id="downloadStats">تنزيل الإحصائية PDF</button>
+        </div>
+    </div>
+    <script src="Weekly Statistics.js"></script>
+</body>
+</html>
