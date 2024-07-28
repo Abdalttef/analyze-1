@@ -27,16 +27,24 @@ header .logo {
     order: 1;
     max-height: 50px;
 }
+.slider-style{
 
-header nav ul {
-    display: flex;
+
 }
+
+header nav > ul {
+    display: flex;
+    justify-content: center !important;
+    align-items: center;
+    margin-top: 20px;
+}
+
 
 header nav ul li a {
     display: inline-block;
     color: #fff; /* White color for text */
     padding: 5px 0;
-    margin: 0 55px;
+    margin: 0 40px;
     border: 3px solid transparent;
     text-transform: uppercase;
     transition: 0.2s;
@@ -60,7 +68,13 @@ header nav ul li a.active::after {
     width: 100%;
     left: 0;
 }
+header nav ul li a:hover {
+    color: #fff; /* White color */
+}
 
+header nav ul li a.text-primary { /* Override MDB's hover class */
+    color: #fff; /* White color */
+}
 .hamburger {
     cursor: pointer;
     display: none;

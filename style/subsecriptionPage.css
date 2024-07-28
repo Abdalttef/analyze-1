@@ -1,11 +1,8 @@
-
 body {
     font-family: "lato", sans-serif;
     background-color: #f8f9fa;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 0;
+    padding-top: 55px; 
 }
 
 .header {
@@ -16,10 +13,11 @@ body {
     padding: 10px 20px;
     background-color: rgb(255, 255, 255);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    position: absolute;
+    position: fixed; 
     top: 0;
     height: 55px;
     border-radius: 3px;
+    z-index: 10; 
 }
 
 .header .logo {
@@ -27,33 +25,46 @@ body {
     max-height: 45px;
 }
 
+.plan-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0; 
+}
+
 .pricing-table {
     background: #f8f8f8;
     padding: 40px 20px;
+    text-align: center;
 }
 
 .pricing-table .details {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    /* Center children horizontally */
     align-items: center;
-    /* Center children vertically */
-    width: 90%;
+    width: 100%;
     max-width: 500px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 20px 17px;
 }
 
 .pricing-table .details h2 {
     font-size: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 35px;
+}
+
+.pricing-table .details p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 40px;
 }
 
 .pricing-table .grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    /* Center children to the center */
     gap: 20px 0px;
     padding: 20px;
 }
@@ -87,7 +98,7 @@ body {
     margin-bottom: 10px;
 }
 
-.pricing-table .grid .box .features>* {
+.pricing-table .grid .box .features > * {
     color: #3b3b3bd9;
     padding: 8px 0px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
@@ -111,18 +122,19 @@ body {
     background: #7e6182;
 }
 
-
 .pricing-table .grid .box.professional .title {
     color: #f8f8f8;
 }
-.box.professional .title b{
+
+.box.professional .title b {
     margin-bottom: 10px;
 }
+
 .pricing-table .grid .box.professional .price {
     color: #f8f8f8;
 }
 
-.pricing-table .grid .box.professional .features>* {
+.pricing-table .grid .box.professional .features > * {
     color: #ffffff;
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
@@ -132,12 +144,65 @@ body {
     color: #7e6182;
 }
 
-@media (max-width: 804px) {
-    .pricing-table .grid {
-        gap: 20px;
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .pricing-table {
+        padding: 20px;
+    }
+
+    .pricing-table .details h2 {
+        font-size: 1.5rem;
+    }
+
+    .pricing-table .details p {
+        font-size: 0.85rem;
+    }
+
+    .pricing-table .grid .box {
+        width: calc(100% - 40px);
+        margin-bottom: 20px;
     }
 
     .pricing-table .grid .box.professional {
         transform: scale(1);
+    }
+
+    .pricing-table .grid .box .price b {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 5px 10px;
+    }
+
+    .header .logo {
+        max-height: 35px;
+    }
+
+    .pricing-table .details h2 {
+        font-size: 1.25rem;
+    }
+
+    .pricing-table .details p {
+        font-size: 0.90rem;
+    }
+
+    .pricing-table .grid .box {
+        width: calc(100% - 20px);
+        margin-bottom: 15px;
+    }
+
+    .pricing-table .grid .box .title {
+        font-size: 1rem;
+    }
+
+    .pricing-table .grid .box .price b {
+        font-size: 1.75rem;
+    }
+
+    .pricing-table .grid .box .features > * {
+        padding: 6px 0;
     }
 }
