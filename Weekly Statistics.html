@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Attendance</title>
-    <link rel="stylesheet" href="Weekly Statistics.css">
+    <link rel="stylesheet" href="style/Weekly Statistics.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
@@ -14,9 +14,12 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<link rel="icon" href="assets/webLogo3.ico">
+
 
 </head>
 <body>
+    
     <a href="javascript:(function(){function loadScript(url,callback){var script=document.createElement('script');script.type='text/javascript';script.onload=callback;script.src=url;document.head.appendChild(script);}function InitExport(){'use strict';if(!window.location.href.includes('noor.moe.gov.sa')){alert('لتفعيل هذه الميزة، يرجى تسجيل الدخول إلى نظام نور.');return;}const e=document.querySelector('.MSRS-RVC'),t=e?e.parentElement:null;if(!e||!t){Swal.fire({title:'تنبيه',text:'اضغط عرض التقرير ليتم تصديره',icon:'warning',confirmButtonText:'موافق'});return;}try{var o=document.getElementById('ExportContainer');if(o)o.remove();}catch(e){}const r=e.id,n=document.createElement('div');n.setAttribute('style','padding: 0 10px; text-align: end; display: inline-flex; float: right; cursor: pointer;');n.setAttribute('id','ExportContainer');['pdf','excel','word'].forEach(e=>{const t=document.createElement('div');t.id='ExportButton_'+e;t.title='تصدير '+e;t.style.cursor='pointer';if(e==='pdf'){t.innerHTML='<i class=&quot;fa fa-file-pdf-o&quot; style=&quot;font-size: 35px; color: #F44336;&quot;></i>';}else if(e==='excel'){t.innerHTML='<i class=&quot;fa fa-file-excel-o&quot; style=&quot;font-size: 35px; color: #009688; margin: 0 30px;&quot;></i>';t.style.margin='0 30px;';}else if(e==='word'){t.innerHTML='<i class=&quot;fa fa-file-word-o&quot; style=&quot;font-size: 35px; color: #2196F3;&quot;></i>';}t.addEventListener('click',()=>window.$find(r).exportReport(e==='excel'?'EXCELOPENXML':e));n.appendChild(t);});const i=document.querySelector('.ToolBarButtonsCell');i.prepend(n);}loadScript('https://cdn.jsdelivr.net/npm/sweetalert2@11',InitExport);})();">Export Report</a>
 
     <div class="container">
@@ -36,9 +39,14 @@
                 </select>
             </div>
         </div>
+        <div>
+            <p>1-للتحليل الاسبوعي جهز مستندات الاكسل من نور و حفضها بالجهاز  </p>
+            <p>2- اضغط على زر ارفق الملف لتحميل المستندات</p>
+            <p>3 اضغط على زر الرسم البياني لمشاهدت الرسم</p>
+            </div>
         <div class="controls">
             <div class="buttons">
-                <button id="fetchDataButton">جلب البيانات</button>
+                <button id="fetchDataButton"> ارفق الملف  </button>
                 <input type="file" id="fileInput" style="display:none">
             </div>
             <div class="tabs">
@@ -49,13 +57,6 @@
         <div class="content">
             <div class="table-container" id="table-container">
                 <!-- Table content goes here -->
-            </div>
-            <div class="chart-container hidden" id="chart-container">
-                <canvas id="attendanceChart"></canvas>
-            </div>
-            <div class="stats-container hidden" id="stats-container">
-                <p>إحصائيات الحضور والغياب:</p>
-                <p>الصف الثاني: نسبة الحضور 88.00%</p>
             </div>
         </div>
         <div class="download-buttons">

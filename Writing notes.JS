@@ -7,31 +7,22 @@ function Note(id, title, content){
 }
 
 // Add eventListeners 
-
 function eventListeners(){
   document.addEventListener("DOMContentLoaded", displayNotes);
   document.getElementById("add-note-btn").addEventListener("click", addNewNote); 
-  
   noteListDiv.addEventListener("click", deleteNote);
-  
- document.getElementById("delete-all-btn").addEventListener("click", deleteAllNotes);
- 
+  document.getElementById("delete-all-btn").addEventListener("click", deleteAllNotes);
+  document.getElementById("search-bar").addEventListener("input", searchNotes);
 }
-
 
 eventListeners();
 
-
 // get item from storage 
-
 function getDataFromStorage(){
   return localStorage.getItem("notes") ? JSON.parse(localStorage.getItem("notes")) : [];
 }
 
-
-
 // add a new note in the list 
-
 function addNewNote(){
   const noteTitle = document.getElementById("note-title");
   const noteContent = document.getElementById("note-content");
@@ -45,37 +36,27 @@ function addNewNote(){
     createNote(noteItem);
     
     // saving in the local storage 
-    
     localStorage.setItem("notes", JSON.stringify(notes));
     noteTitle.value = "";
     noteContent.value = "";
-    
-    
   }
-  
 }
 
-
-
-//  input validation 
-
+// input validation 
 function validateInput(title, content){
   if(title.value !== "" && content.value !== ""){
     return true;
-  }else {
+  } else {
     if(title.value === "") title.classList.add("warning");
     if(content.value === "") content.classList.add("warning");
   }
   setTimeout(() => {
     title.classList.remove("warning");
     content.classList.remove("warning");
-    
   }, 1600);
 }
 
-
 // create a new note div
-
 function createNote(noteItem){
   const div = document.createElement("div");
   div.classList.add("note-item");
@@ -83,23 +64,21 @@ function createNote(noteItem){
   div.innerHTML = `
         <h3>${noteItem.title}</h3>
         <p>${noteItem.content}</p>
-        <button type = "button" class = "btn delete-note-btn">
-        <span><i class = "fas fa-trash"></i></span>
+        <button type="button" class="btn delete-note-btn">
+        <span><i class="fas fa-trash"></i></span>
         Delete
-        </buttton>
+        </button>
   `;
   noteListDiv.appendChild(div);
 }
 
-
 // display all the notes from the local storage
-
 function displayNotes(){
   let notes = getDataFromStorage();
   if(notes.length > 0) {
     noteID = notes[notes.length - 1].id;
     noteID++;
-  }else {
+  } else {
     noteID = 1;
   }
   notes.forEach(item => {
@@ -107,11 +86,9 @@ function displayNotes(){
   });
 }
 
-
 // delete a note 
 function deleteNote(e){
   if (e.target.classList.contains("delete-note-btn")) {
-    
     e.target.parentElement.remove();
     let divID = e.target.parentElement.dataset.id;
     let notes = getDataFromStorage();
@@ -122,7 +99,6 @@ function deleteNote(e){
   }
 }
 
-
 // delete all notes 
 function deleteAllNotes(){
   localStorage.removeItem("notes");
@@ -132,5 +108,20 @@ function deleteAllNotes(){
       noteListDiv.removeChild(item);
     });
   }
-  noteID = 1 //resetting noteID to 1
+  noteID = 1; //resetting noteID to 1
+}
+
+// search notes by title
+function searchNotes(e) {
+  const searchValue = e.target.value.toLowerCase();
+  const noteItems = document.querySelectorAll('.note-item');
+  
+  noteItems.forEach(item => {
+    const noteTitle = item.querySelector('h3').textContent.toLowerCase();
+    if(noteTitle.includes(searchValue)) {
+      item.style.display = 'block';
+    } else {
+      item.style.display = 'none';
+    }
+  });
 }

@@ -44,10 +44,11 @@ body {
     justify-content: flex-start;
 }
 
+
 .buttons button, .tabs button {
     padding: 10px 20px;
     margin-right: 10px;
-    background-color: #007bff;
+    background-color: #bfa2db;
     color: #fff;
     border: none;
     border-radius: 3px;
@@ -55,7 +56,7 @@ body {
 }
 
 .buttons button:hover, .tabs button:hover {
-    background-color: #0056b3;
+    background-color: #8188af;
 }
 
 .content {
@@ -70,10 +71,6 @@ body {
     background-color: #f9f9f9;
     margin-bottom: 20px;
     flex-grow: 1; /* Allow table to grow */
-}
-
-.hidden {
-    display: none;
 }
 
 table {
@@ -112,13 +109,14 @@ th, td {
 .download-buttons button {
     padding: 10px 20px;
     margin: 10px;
-    background-color: #28a745;
+    background-color: #bfa2db;
     color: #fff;
     border: none;
-    border-radius: 3px;
+    border-radius: 15px;
     cursor: pointer;
+
 }
 
 .download-buttons button:hover {
-    background-color: #218838;
+    background-color: #8188af;
 }

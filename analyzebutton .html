@@ -5,30 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>analyzebutton</title>
     <link rel="stylesheet" href="style/analyzebutton.css">
+    <link rel="icon" href="assets/webLogo3.ico">
+    <script src="script.js" defer></script>
 </head>
-<div class="logoo">
-    <img src="assets/webLogo2.png" alt="Logo" class="logo">
-</div>
 <body>
-    <div class="button-container">
-        <button>أسباب الغياب</button>
-        <button>تقرير الغياب الأسبوعي</button>
-        <button>الإحصائية الأسبوعية</button>
-        <button>تقرير حسب الطالب</button>
-        <button>إحصائية الغياب حسب الفصل الدراسي</button>
-        <button>تحليل الغياب حسب الفصل الدراسي</button>
-        <button>تقرير بأسماء الطلاب حسب الغياب</button>
+    <div class="logoo">
+        <img src="assets/webLogo2.png" alt="Logo" class="logo">
     </div>
-    <div class="container">
+   
+    <div class="tab-bar-container">
+        <div class="tab-bar">
+            <button class="tab active"> اسباب الغياب </button>
+            <button class="tab">تحليل الغياب الاسبوعي </button>
+            <button class="tab">تحليل الغياب حسب الفصل الدراسي</button>
+            <button class="tab">تقرير بأسماء الطلاب حسب الغياب</button>
+
+        </div>
+    </div>
         <div class="form-container">
             <div class="form-group">
-                <select>
+                <select id="academic-year">
                     <option>العام الدراسي</option>
                     <option>1446 - 1445 هـ</option>
                     <option>1447 - 1446 هـ</option>
                     <option>1448 - 1447 هـ</option>
                 </select>
-                <select>
+                <select id="month">
                     <option>الشهر</option>
                     <option>محرم</option>
                     <option>صفر</option>
@@ -43,21 +45,24 @@
                     <option>ذو القعدة</option>
                     <option>ذو الحجة</option>
                 </select>
-                <select>
-                    <option>نوع الغياب</option>
-                    <option>بعذر</option>
-                    <option>بدون عذر</option>
+                <select id="absence-type" onchange="handleActionButton()">
+                    <option value="">نوع الغياب</option>
+                    <option value="بعذر">بعذر</option>
+                    <option value="بدون عذر">بدون عذر</option>
                 </select>
-                <select>
+                <button id="action-button">نوع الغياب</button>
+                <select id="semester">
                     <option>الفصل</option>
                     <option>الفصل الأول</option>
                     <option>الفصل الثاني</option>
                 </select>
-                <select>
+                <select id="class">
                     <option>الصف</option>
                 </select>
             </div>
         </div>
     </div>
+    <script src="analyzebutton .js"></script>
+
 </body>
 </html>

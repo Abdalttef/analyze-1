@@ -45,15 +45,15 @@ body {
 .note-wrapper {
   margin: 0.7rem 0;
   padding: 0.5rem 0;
-  
 }
 
+#search-bar,
 #note-title,
 #note-content {
   width: 100%;
   border: 2px solid rgba(0, 0, 0, 0.2);
   font-size: 1.05rem;
-  padding:  0.55rem;
+  padding: 0.55rem;
   margin-bottom: 0.8rem;
   border-radius: 2rem;
 }
@@ -63,7 +63,8 @@ body {
 }
 
 #note-title:focus,
-#note-content:focus {
+#note-content:focus,
+#search-bar:focus {
   outline: 0;
 }
 
@@ -94,7 +95,6 @@ body {
   padding: 2rem;
   border-radius: 5px;
 }
-
 
 .note-item {
   background: #fff;
