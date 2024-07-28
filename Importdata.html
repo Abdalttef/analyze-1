@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Example</title>
+    <link rel="stylesheet" href="style/Importdata.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <link rel="icon" href="assets/webLogo3.ico">
+
+</head>
+<body>
+    <div class="logoo">
+        <img src="assets/webLogo2.png" alt="Logo" class="logo">
+    </div>
+    <div class="container">
+        <div class="tabs">
+            <button class="tab-button active">استيراد النتائج</button>
+        </div>
+        <div class="content">
+            <div class="instructions">
+                <p>١- جهز مستندات الإكسل من نظام نور و احفظها على جهات على مستوى أيام،</p>
+                <p>للحصول على مستند إكسل: ادخل على نظام نور، جرح تساسيل الغياب،</p>
+                <p>حدد الفصل الدراسي الأول، ثم حدد الصف الأول الإبتدائي، ثم حدد السنة كـ١٤٤٤/١٤٤٥ هـ، ثم حدد الشهر كرر على الفصل (٢) و (٣) - ثم كرر على الصف الثاني و الثالث - إلى السادس</p>
+                <p>٢- حدد جميع مستندات الإكسل الخاصة بالغياب</p>
+                <input type="file" id="file-input" class="file-input" multiple>
+                <label for="file-input" class="btn import-btn">استيراد البيانات  </label>
+                <div class="yellow-box" id="file-list">ادخل التعليمات هنا</div>
+            </div>
+            <div class="buttons">
+                <button class="btn" >  <a href="analyzebutton .html">تحليل الغياب</a></button>
+                <button class="btn">حذف جميع النتائج في القائمة</button>
+                <button id="fetch-data-btn" class="btn">ابدأ بجلب البيانات</button>
+            </div>
+        </div>
+    </div>
+    <script src="Importdata.js"></script>
+</body>
+</html>
