@@ -8,16 +8,6 @@
     <link rel="icon" href="assets/webLogo3.ico">
 </head>
 <body>
-    <div class="logoo">
-        <img src="assets/webLogo2.png" alt="Logo" class="logo">
-    </div>
-    <div class="tab-bar-container">
-        <div class="tab-bar">
-            <button class="tab active">تحليل غياب الطلاب</button>
-            <button class="tab">نماذج اختبارات</button>
-            <button class="tab">الإعدادات</button>
-        </div>
-    </div>
     <div class="container">
         <div class="form-group">
             <label for="year">العام الدراسي</label>
@@ -30,8 +20,8 @@
         <div class="form-group">
             <label for="stage">المرحلة الدراسية</label>
             <select id="stage" onchange="updateButtonLabels()">
-                <option value="متوسط">متوسط</option>
                 <option value="ابتدائي">ابتدائي</option>
+                <option value="متوسط">متوسط</option>
                 <option value="ثانوي">ثانوي</option>
             </select>
         </div>
