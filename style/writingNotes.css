@@ -18,7 +18,7 @@
 body {
   line-height: 1.5;
   font-weight: 300;
-  background-image: linear-gradient(#7a678b, #7a678b);
+  background-image: linear-gradient(#faf9fb, #f5f4f7);
   height:100vh;
   
 }
@@ -34,12 +34,12 @@ body {
   text-align:center;
   opacity: 0.8;
   margin-bottom: 1rem;
-  color: #fff;
+  color: #b8a9c9;
   
 }
 
 .note-input h3 {
-  color: rgb(255, 255, 255);
+  color:#b8a9c9;
 }
 
 .note-wrapper {
@@ -71,10 +71,10 @@ body {
 .btn {
   background: #b8a9c9;
   border: 2px solid #b8a9c9;
-  color: #fff;
+  color: #110101;
   padding: 0.55rem 0;
   width: 120px;
-  border-radius: 2px;
+  border-radius: 10px;
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
@@ -91,7 +91,7 @@ body {
 
 .note-list {
   margin: 2rem 0;
-  background-image: linear-gradient(#b8a9c9, #7a678b);
+  background-image: linear-gradient(#f3eff6, #b8a9c9);
   padding: 2rem;
   border-radius: 5px;
 }
