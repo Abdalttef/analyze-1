@@ -113,12 +113,11 @@ body {
   color: #7e6182;
 }
 
-/* Media Queries for Responsiveness */
 @media (max-width: 991px) {
-  /* .header {
+  .header {
     flex-direction: column;
     text-align: center;
-  } */
+  }
   .header {
     box-sizing: border-box;
     margin: 0;

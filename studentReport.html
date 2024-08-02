@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Report</title>
+    <link rel="stylesheet" href="style/analyzebutton.css">
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-group">
+            <select id="academic-year">
+                <option>العام الدراسي</option>
+                <option>1446 - 1445 هـ</option>
+                <option>1447 - 1446 هـ</option>
+                <option>1448 - 1447 هـ</option>
+            </select>
+            <select id="month">
+                <option>الشهر</option>
+                <option>محرم</option>
+                <option>صفر</option>
+                <option>ربيع الأول</option>
+                <option>ربيع الثاني</option>
+                <option>جمادى الأولى</option>
+                <option>جمادى الثانية</option>
+                <option>رجب</option>
+                <option>شعبان</option>
+                <option>رمضان</option>
+                <option>شوال</option>
+                <option>ذو القعدة</option>
+                <option>ذو الحجة</option>
+            </select>
+            <select id="absence-type" onchange="handleActionButton()">
+                <option value="">نوع الغياب</option>
+                <option value="بعذر" class="redback">بعذر</option>
+                <option value="بدون عذر" class="greenback"> بدون عذر</option>
+            </select>
+            <button id="action-button">نوع الغياب</button>
+            <select id="semester">
+                <option>الفصل</option>
+                <option>الفصل الأول</option>
+                <option>الفصل الثاني</option>
+            </select>
+            <select id="class">
+                <option>الصف</option>
+            </select>
+        </div>
+    </div>
+    <script src="analyzebutton.js"></script>
+
+</body>
+</html>

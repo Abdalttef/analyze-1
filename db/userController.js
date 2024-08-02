@@ -1,8 +1,13 @@
 const db = require('./index');
 const bcrypt = require('bcrypt');
 const { Op } = require('sequelize');
+require('dotenv').config();
+const jwt = require('jsonwebtoken');
+
+
 const User =db.User;
 
+const jwtSecret = process.env.JWT_SECRET
 // const User = require('./user')
 
 
@@ -72,7 +77,14 @@ exports.login = async (req, res) => {
       return res.status(400).json({ error: 'بيانات الدخول غير صحيحة، تأكد من إدخال البريد الإلكتروني وكلمة المرور بشكل صحيح' });
     }
 
+    const token = jwt.sign(
+      { id: user.id, username: user.username, email: user.email },
+      jwtSecret,
+      { expiresIn: '1h' } 
+    );
+
     console.log('Login successful for user:', user.username);
+    res.status(200).json({ token }); 
     res.status(200).json({ message: 'Login successful' });
   } catch (error) {
     console.error('Error during login:', error);
@@ -80,7 +92,60 @@ exports.login = async (req, res) => {
   }
 };
 
+// handle pass change
+exports.changePassword = async (req, res) => {
+  const { userId, currentPassword, newPassword } = req.body;
 
+  try {
+    const user = await User.findOne({ where: { id: userId } });
 
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
 
+    const match = await bcrypt.compare(currentPassword, user.password);
+    if (!match) {
+      return res.status(400).json({ message: 'Current password is incorrect' });
+    }
 
+    if (newPassword.length < 6) {
+      return res.status(400).json({ message: 'New password must be at least 6 characters long' });
+    }
+
+    const hashedNewPassword = await bcrypt.hash(newPassword, 10);
+    await user.update({ password: hashedNewPassword });
+
+    res.status(200).json({ message: 'Password updated successfully' });
+  } catch (err) {
+    res.status(500).json({ message: 'Server error' });
+  }
+};
+
+// //handle logout 
+// const blacklistedTokens = new Set(); 
+
+// exports.logout = (req, res) => {
+//   const token = req.headers.authorization?.split(' ')[1]; 
+
+//   if (token) {
+//     blacklistedTokens.add(token);
+
+//     res.status(200).json({ message: 'Logged out successfully' });
+//   } else {
+//     res.status(400).json({ message: 'No token provided' });
+//   }
+// };
+const blacklistedTokens = new Set(); 
+exports.logout = (req, res) => {
+  
+  res.clearCookie('token'); 
+
+  // if (token) {
+  //       blacklistedTokens.add(token);
+    
+  //       res.status(200).json({ message: 'Logged out successfully' });
+  //     } else {
+  //       res.status(400).json({ message: 'No token provided' });
+  //     }
+  res.status(200).json({ message: 'Logged out successfully' });
+};

@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/rama-alatiq/analyze#readme",
   "dependencies": {
+    "@userfront/core": "^1.0.0",
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
     "chart.js": "^4.4.3",
@@ -28,6 +29,7 @@
     "exceljs": "^4.4.0",
     "express": "^4.19.2",
     "glob": "^11.0.0",
+    "jsonwebtoken": "^9.0.2",
     "multer": "^1.4.5-lts.1",
     "mysql2": "^3.10.3",
     "pg": "^8.12.0",

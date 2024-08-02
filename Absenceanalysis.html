@@ -26,20 +26,29 @@
             </select>
         </div>
         <div class="buttons">
-            <button id="analyzeButton">تحليل غياب - متوسط</button>
-            <button id="importButton">إستيراد غياب - متوسط</button>
+            <button id="analyzeButton"  onclick="loadPage('analyzebutton.html')">تحليل غياب - متوسط</button>
+            <!-- <button id="importButton">إستيراد غياب - متوسط</button> -->
         </div>
     </div>
-    
+
     <script>
         function updateButtonLabels() {
             const stage = document.getElementById('stage').value;
             document.getElementById('analyzeButton').textContent = `تحليل غياب - ${stage}`;
-            document.getElementById('importButton').textContent = `إستيراد غياب - ${stage}`;
+            // document.getElementById('importButton').textContent = `إستيراد غياب - ${stage}`;
         }
         
         // Initialize buttons on page load
         window.onload = updateButtonLabels;
+
+        function loadPage(url) {
+            window.parent.document.getElementById('contentFrame').src = url;
+            // document.getElementById('contentFrame').src = url;
+        }
+        
     </script>
+    <script src="scripts/load.js"></script>
+
+
 </body>
 </html>

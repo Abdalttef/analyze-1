@@ -14,8 +14,21 @@ $(document).ready(function() {
           password: password
         }),
         success: function(response) {
-          console.log('User logged in successfully');
-          window.location.href = 'homePage.html';
+          const token = response.token;
+          const userId = response.userId; 
+          if (token) {
+            localStorage.setItem('token', token);
+            localStorage.setItem('userId', userId);
+
+
+            console.log('User logged in successfully');
+            window.location.href = 'homePage.html'; 
+          } else {
+            
+            $('#error-message').text('Login failed: No token received').show();
+          }
+          // console.log('User logged in successfully');
+          // window.location.href = 'homePage.html';
         },
         error: function(error) {
           const errorMsg = error.responseJSON ? error.responseJSON.error : 'An unexpected error occurred';

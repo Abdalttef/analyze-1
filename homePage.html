@@ -24,14 +24,10 @@
         <input type="checkbox" id="nav_check" hidden>
         <nav>
             <ul>
-                <li>
-                    <a href="">الإعدادت</a>
-                </li>
-                <li>
-                    <a href="">نماذج اختبارات</a>
-                </li>
-                <li><a href="javascript:void(0);" onclick="loadPage('Absenceanalysis.html')">تحليل غياب الطلاب</a></li>
-                <li><a href="javascript:void(0);" onclick="loadPage('slider.html')">الصفحة الرئيسية</a></li>
+                <li><a href="#" class="nav-link" onclick="setActive(this); loadPage('settingsPage.html')" style="color: white;">الإعدادت</a></li>
+                <li><a href="javascript:void(0);" class="nav-link" onclick="setActive(this); loadPage('exammodel.html')" style="color: white;">نماذج اختبارات</a></li>
+                <li><a href="javascript:void(0);" class="nav-link" onclick="setActive(this); loadPage('analyzeButton.html')" style="color: white;">تحليل غياب الطلاب</a></li>
+                <li><a href="javascript:void(0);" class="nav-link active" onclick="setActive(this); loadPage('slider.html')" style="color: white;">الصفحة الرئيسية</a></li>
             </ul>
         </nav>
         <label for="nav_check" class="hamburger">
@@ -41,7 +37,7 @@
         </label>
     </header>
     <main>
-        <iframe id="contentFrame" src="" frameborder="0" style="width:100%; height:calc(100vh - 80px);"></iframe>
+        <iframe id="contentFrame" src="slider.html" frameborder="0" style="width:100%; height:calc(100vh - 80px);"></iframe>
     </main>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -49,7 +45,14 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <!-- MDB JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"></script>
-    <script src="scripts/load.js"></script>
+    <script src="scripts/load.js" defer></script>
+    <script>
+        function setActive(element) {
+            var links = document.querySelectorAll('.nav-link');
+            links.forEach(link => link.classList.remove('active'));
+            element.classList.add('active');
+        }
+    </script>
 </body>
 
 </html>
