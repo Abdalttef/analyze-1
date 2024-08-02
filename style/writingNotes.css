@@ -18,7 +18,8 @@
 body {
   line-height: 1.5;
   font-weight: 300;
-  background-image: linear-gradient(#faf9fb, #f5f4f7);
+  /* background-image: linear-gradient(#faf9fb, #f5f4f7); */
+  background-color:#ffffff;
   height:100vh;
   
 }
@@ -34,12 +35,12 @@ body {
   text-align:center;
   opacity: 0.8;
   margin-bottom: 1rem;
-  color: #b8a9c9;
+  color: #b082b4d5;
   
 }
 
 .note-input h3 {
-  color:#b8a9c9;
+  color:#b082b4d5;
 }
 
 .note-wrapper {
@@ -69,7 +70,7 @@ body {
 }
 
 .btn {
-  background: #b8a9c9;
+  background: #b082b4d5;
   border: 2px solid #b8a9c9;
   color: #110101;
   padding: 0.55rem 0;
@@ -85,7 +86,7 @@ body {
 }
 
 .btn:hover {
-  background: #9076ad;
+  background: #8d6d91cf;
   box-shadow: 0, 0, 8px 0 rgba(255, 96, 72, 0.33);
 }
 
