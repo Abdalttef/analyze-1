@@ -6,26 +6,40 @@
     <title>تصميم واجهة</title>
     <link rel="stylesheet" href="style/exammodel.css">
     <link rel="icon" href="assets/webLogo3.ico">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+        function generatePDF(content, filename) {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            doc.text(content, 10, 10);
+            doc.save(filename);
+        }
 
+        function handlePDFGeneration(content, filename) {
+            generatePDF(content, filename);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('final-exam-button').addEventListener('click', () => {
+                handlePDFGeneration('نموذج اختبار نهائي', 'نموذج_اختبار_نهائي.pdf');
+            });
+
+            document.getElementById('midterm-exam-button').addEventListener('click', () => {
+                handlePDFGeneration('نموذج اختبار نصف العام', 'نموذج_اختبار_نصف_العام.pdf');
+            });
+        });
+    </script>
 </head>
 <body>
-    <!-- <div class="logoo">
-        <img src="assets/webLogo2.png" alt="Logo" class="logo">
-    </div> -->
     <div class="container">
-        <!-- <div class="nav">
-            <button class="nav-button">تحليل غياب الطلاب</button>
-            <button class="nav-button">نماذج اختبارات</button>
-            <button class="nav-button">الإعدادات</button>
-        </div> -->
         <div class="content">
             <div class="box">
                 <img src="assets/file.png" alt="logo" class="icon">
-                <a href="assets/file.png" download class="box-button"  style="color: rgb(255, 255, 255); font-weight: 550; font-size: 16px;" >نموذج اختبار نهائي</a>
+                <button id="final-exam-button" class="box-button" style="color: rgb(255, 255, 255); font-weight: 550; font-size: 16px;">نموذج اختبار نهائي</button>
             </div>
             <div class="box">
                 <img src="assets/file.png" alt="logo" class="icon">
-                <a href="assets/background2.png" download class="box-button" style="color: rgb(255, 255, 255);font-weight: 550; font-size: 16px;">نموذج اختبار نصف العام</a>
+                <button id="midterm-exam-button" class="box-button" style="color: rgb(255, 255, 255); font-weight: 550; font-size: 16px;">نموذج اختبار نصف العام</button>
             </div>
         </div>
     </div>

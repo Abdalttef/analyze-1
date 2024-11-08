@@ -20,5 +20,7 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 db.User = require('./user')(sequelize, DataTypes);
+//New
+db.Student = require('./student')(sequelize, DataTypes);
 
 module.exports = db;

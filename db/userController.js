@@ -37,7 +37,7 @@ exports.register = async (req, res) => {
       return res.status(409).json({ error: 'اسم المستخدم الذي أدخلته قيد الاستخدام بالفعل، يرجى استخدام اسم مستخدم آخر' });
     }
 
-    await validateEmailDomain(email); 
+  
     
     const hashedPassword = await bcrypt.hash(password, 10);
 
@@ -148,4 +148,22 @@ exports.logout = (req, res) => {
   //       res.status(400).json({ message: 'No token provided' });
   //     }
   res.status(200).json({ message: 'Logged out successfully' });
+};
+
+
+
+
+
+exports.test= (req, res) => {
+    console.log("test")
+  const filePath = path.join(__dirname, "Book1.xlsx");
+
+  const workbook = XLSX.readFile(filePath);
+  const sheetNames = workbook.SheetNames;
+
+  const sheet = workbook.Sheets[sheetNames[0]];
+
+  const data = XLSX.utils.sheet_to_json(sheet);
+
+  res.json(data);
 };
