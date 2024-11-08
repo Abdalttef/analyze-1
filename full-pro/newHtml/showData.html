@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .navbar {
+      background-color: #333;
+      overflow: hidden;
+    }
+    .navbar a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+    .navbar a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+  </style>
+<head>
+  <title>Student Absence</title>
+</head>
+<body>
+  <div class="navbar">
+    <a href="upload.html">Upload Data</a>
+    <a href="showData.html">Show Data</a>
+    <a href="Chart.html">View Chart</a>
+  </div>
+  <select id="weekSelector">
+    <option value="1">Week 1</option>
+    <option value="2">Week 2</option>
+    <option value="3">Week 3</option>
+    <option value="4">Week 4</option>
+    <option value="all">All Weeks</option> 
+  </select>
+
+  <table id="studentTable" border="1">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Number</th>
+        <th>Absent Days</th>
+        <th>Type of Absence</th>
+        <th>Total Absent Days (Excused)</th>
+        <th>Total Absent Days (Unexcused)</th>
+        <th>Percentage Absent Days (Excused)</th>
+        <th>Percentage Absent Days (Unexcused)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Data will be populated here -->
+    </tbody>
+  </table>
+
+  <script>
+    let allStudents = [];
+
+    function fetchStudents() {
+      fetch('http://localhost:3000/students')
+        .then(response => response.json())
+        .then(data => {
+          allStudents = data; // Store all student data
+          updateTable('1'); // Initially show data for Week 1
+        })
+        .catch(error => console.error('Error fetching student data:', error));
+    }
+
+    function updateTable(weekNumber) {
+      let weekStart, weekEnd;
+      let showAll = weekNumber === 'all';
+      let totalDays;
+
+      if (showAll) {
+        weekStart = 1;
+        weekEnd = 30;
+        totalDays = 30;
+      } else {
+        switch (parseInt(weekNumber, 10)) {
+          case 1:
+            weekStart = 1;
+            weekEnd = 7;
+            break;
+          case 2:
+            weekStart = 8;
+            weekEnd = 14;
+            break;
+          case 3:
+            weekStart = 15;
+            weekEnd = 21;
+            break;
+          case 4:
+            weekStart = 22;
+            weekEnd = 30;
+            break;
+          default:
+            weekStart = 1;
+            weekEnd = 7;
+        }
+        totalDays = weekEnd - weekStart + 1;
+      }
+
+      const table = document.getElementById('studentTable').getElementsByTagName('tbody')[0];
+      table.innerHTML = ''; // Clear previous data
+
+      allStudents.forEach(student => {
+        const absentDays = [];
+        const absenceTypes = [];
+        let totalAbsentDaysExcused = 0;
+        let totalAbsentDaysUnexcused = 0;
+
+        for (let day = weekStart; day <= weekEnd; day++) {
+          const value = student[`day_${day}`];
+          if (value === 1) {
+            absentDays.push(day);
+            absenceTypes.push('Unexcused');
+            totalAbsentDaysUnexcused++;
+          } else if (value === 2) {
+            absentDays.push(day);
+            absenceTypes.push('Excused');
+            totalAbsentDaysExcused++;
+          }
+        }
+
+        const percentageExcused = totalDays > 0 ? ((totalAbsentDaysExcused / totalDays) * 100).toFixed(2) : '0.00';
+        const percentageUnexcused = totalDays > 0 ? ((totalAbsentDaysUnexcused / totalDays) * 100).toFixed(2) : '0.00';
+
+        if (absentDays.length > 0) {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${student.student_name}</td>
+            <td>${student.student_number}</td>
+            <td>${absentDays.join(', ')}</td>
+            <td>${absenceTypes.join(', ')}</td>
+            <td>${totalAbsentDaysExcused}</td>
+            <td>${totalAbsentDaysUnexcused}</td>
+            <td>${percentageExcused}%</td>
+            <td>${percentageUnexcused}%</td>
+          `;
+          table.appendChild(row);
+        }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      fetchStudents(); // Fetch student data when the page loads
+
+      const weekSelector = document.getElementById('weekSelector');
+      weekSelector.addEventListener('change', () => {
+        const weekNumber = weekSelector.value;
+        updateTable(weekNumber); // Update table based on selected week or all weeks
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, sans-serif;
+    direction: rtl;
+    margin: 0;
+    padding: 20px;
+    margin-top: 0px;
+}
+
+.tab-bar-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+}
+
+.tab-bar {
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #333;
+    border-radius: 10px;
+    margin: 0 5px;
+}
+
+
+.tab.active {
+    background: linear-gradient(to right, #8d6d91cf, #b082b4d5);;
+    color: white;
+}
+
+.tab:hover {
+    background: linear-gradient(to right, #8d6d91cf, #b082b4d5);
+    color: white;
+}
+.content-container {
+    width: 85%;
+    height: calc(100vh - 100px);
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    overflow: hidden;
+    position: relative;
+}
+iframe#contentFrame {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+}
+.form-container {
+    width: 60%;
+    height: 60%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    margin-top: 20px;
+    margin-left: 250px;
+}
+
+.form-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.form-group select,
+#action-button {
+    width: 30%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+#action-button {
+    background: linear-gradient(to right, #8d6d91b8, #b082b4b5);
+    color: white;
+    cursor: pointer;
+}
+
+#action-button:hover {
+    background: linear-gradient(to right, #8d6d91cf, #b082b4d5);
+}
+
+.button-container {
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 70px;
+}
+
+.button-container button {
+    padding: 15px;
+    background: linear-gradient(to right, #8d6d91cf, #b082b4d5);
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+}
+
+.button-container button:hover {
+    background: linear-gradient(to right, #8d6d91cf, #b082b4d5);
+}

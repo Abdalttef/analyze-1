@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+    /* background-color: #f0f0f0; */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    margin: 50px auto;
+    /* border: 1px solid #ccc; */
+    background-color: #fff;
+    padding: 20px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+}
+
+.header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.select-group {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.header label, .header select {
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.buttons, .tabs {
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+.buttons button, .tabs button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #b082b4d5;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.buttons button:hover, .tabs button:hover {
+    background-color: #8d6d91cf;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    min-height: 300px; /* Ensure enough space for content */
+}
+
+.table-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Allow table to grow */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 10px;
+    text-align: right;
+}
+
+.chart-container, .stats-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
+    text-align: center;
+    margin-top: 20px; /* Add space at the top */
+}
+
+.chart-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.download-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.download-buttons button {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #b082b4d5;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+
+}
+
+.download-buttons button:hover {
+    background-color: #8d6d91cf;
+}

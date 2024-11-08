@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الصفحة الرئيسية</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/webLogo3.ico">
+
+    <link rel="stylesheet" href="style/homePage.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- MDB CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css" rel="stylesheet">
+    <!-- JWT Decode library -->
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <img src="assets/whiteLogo.png" alt="Logo" class="logo">
+        <input type="checkbox" id="nav_check" hidden>
+        <nav>
+            <ul>
+                <li><a href="#" class="nav-link" onclick="setActive(this); loadPage('settingsPage.html')" style="color: white;">الإعدادت</a></li>
+                <li><a href="javascript:void(0);" class="nav-link" onclick="setActive(this); loadPage('exammodel.html')" style="color: white;">نماذج اختبارات</a></li>
+                <li><a href="javascript:void(0);" class="nav-link" onclick="setActive(this); loadPage('analyzeButton.html')" style="color: white;">تحليل غياب الطلاب</a></li>
+                <li><a href="javascript:void(0);" class="nav-link active" onclick="setActive(this); loadPage('slider.html')" style="color: white;">الصفحة الرئيسية</a></li>
+                <li><span id="userEmail" class="nav-link"></span></li>
+            </ul>
+        </nav>
+        <label for="nav_check" class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+    </header>
+    <main>
+        <iframe id="contentFrame" src="slider.html" frameborder="0" style="width:100%; height:calc(100vh - 80px);"></iframe>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- MDB JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"></script>
+    <script src="scripts/load.js" defer></script>
+    <script>
+        function setActive(element) {
+            var links = document.querySelectorAll('.nav-link');
+            links.forEach(link => link.classList.remove('active'));
+            element.classList.add('active');
+        }
+
+        function displayUserEmail() {
+            const token = localStorage.getItem('token');
+            if (token) {
+                try {
+                    const decodedToken = jwt_decode(token);
+                    const email = decodedToken.email; // Adjust this if the email field has a different name
+                    document.getElementById('userEmail').textContent = email;
+                } catch (error) {
+                    console.error('Error decoding token:', error);
+                }
+            }
+        }
+
+        // Call this function when the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            displayUserEmail();
+        });
+    </script>
+</body>
+
+</html>

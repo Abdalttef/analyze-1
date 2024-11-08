@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    direction: rtl;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    margin-top: 50px;
+}
+
+.container {
+    text-align: center;
+    padding: 30px;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    background-color: #d1c4e9;
+    padding: 10px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 20px auto; /* Centered and with a bottom margin */
+    border-radius: 10px; /* Add some border radius for a smoother look */
+}
+
+.nav-button {
+    background-color: #9575cd;
+    border: none;
+    color: rgb(7, 1, 1);
+    padding: 10px 25px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 55px;
+    font-size: 16px;
+}
+
+.nav-button:hover {
+    background-color: #7e57c2;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.box {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    width: 280px;
+    height: 280px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative; /* Ensure positioned elements are relative to this box */
+}
+
+.icon {
+    height: 80px;
+    color: #6a1b9a;
+    position: absolute; /* Position the icon absolutely within the box */
+    top: 50%; /* Position it 50% from the top */
+    left: 50%; /* Position it 50% from the left */
+    transform: translate(-50%, -50%); /* Center the icon by offsetting its size */
+}
+
+.box-button {
+    background: linear-gradient(to right, #8d6d91, #b082b4);;
+    border: none;
+    color: rgb(11, 0, 0);
+    padding: 10px 20px;
+    width: 220px; /* Fixed width to make buttons equal */
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 14px;
+    text-decoration: none;
+    text-align: center; /* Center align text within the button */
+    box-sizing: border-box; /* Ensure padding is included in width */
+    margin-top: 210px;
+}
+
+.box-button:hover {
+    background-color: #d5a5d8;
+}

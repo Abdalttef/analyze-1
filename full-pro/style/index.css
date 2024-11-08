@@ -1,0 +1,195 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 0;
+  height: 55px;
+  border-radius: 3px;
+}
+
+.header .register {
+  order: 1;
+}
+
+.header .logo {
+  order: 2;
+  max-height: 45px;
+}
+
+.header .btn-outline-primary {
+  background-color: #8d6d91;
+  border-color: #6e42c132;
+  color: white;
+  border-radius: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.btn-outline-primary:hover{
+  background-color: #705572;;
+}
+
+
+.login-container {
+  background: rgb(255, 255, 255);
+  padding: 60px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  max-width: 1000px;
+  width: 100%;
+  direction: ltr;
+  margin-top: 70px;
+}
+
+.video-container {
+  width: 100%;
+  flex: 2;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+}
+
+.video-container video {
+  max-width: 100%;
+  border-radius: 10px;
+  color: #ffffff;
+}
+
+.form-container {
+  flex: 1;
+  padding: 20px;
+  text-align: right;
+}
+
+.form-container h2 {
+  margin-bottom: 20px;
+  float: right;
+}
+.form-container p {
+  margin-bottom: 20px;
+  float:right;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  float: right;
+  width: 100%;
+}
+
+.form-container form .form-group {
+  margin-bottom: 16px;
+}
+
+.form-group .form-control {
+  border-radius: 10px;
+  text-align: right;
+}
+
+.form-container .btn-primary {
+  background-color: #8d6d91;
+  border-color: #6e42c169;
+  border-radius: 10px;
+}
+.btn-primary:hover{
+  background-color: #705572;
+  border-color: #5a379c;
+}
+
+.form-container a {
+  color: #7e6182;
+}
+
+@media (max-width: 991px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+  .header {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .header .logo {
+    order: 2;
+    margin-right: 20px;
+  }
+  .header .register{
+    order: 1;
+    margin-left: 20px;
+
+  }
+  .login-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+    margin-top: 60px;
+    border-radius: 40px;
+  }
+  .login-container .form-container {
+    text-align: right;
+    padding: 20px;
+  }
+
+  .video-container,
+  .form-container {
+    width: 100%;
+    flex: none;
+    text-align: center;
+  }
+
+  .form-container {
+    padding: 20px 0;
+  }
+
+  .video-container video {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .header .btn-outline-primary {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f9faef;
+  }
+  .bg-img{
+    background-image: none;
+  }
+  .form-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .form-container form .form-group .form-control {
+    font-size: 0.9rem;
+  }
+
+  .form-container .btn-primary {
+    font-size: 0.9rem;
+  }
+
+  .login-container {
+    padding: 20px;
+    margin-top: 50px;
+  }
+}
